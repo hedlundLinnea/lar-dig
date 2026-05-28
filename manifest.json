@@ -1,0 +1,25 @@
+{
+  "name": "Lär dig!",
+  "short_name": "Lär dig",
+  "description": "Interaktiv app för barn att lära sig ord på svenska",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FFF8E7",
+  "theme_color": "#FFD166",
+  "lang": "sv",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

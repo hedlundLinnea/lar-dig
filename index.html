@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#FFD166" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Lär dig! — Interaktiv barn-app</title>
+  <meta name="description" content="Lär dig svenska och engelska ord med djurljud, mat, kläder och färger. För barn 1–6 år." />
+  <meta property="og:title" content="Lär dig!" />
+  <meta property="og:description" content="Interaktiv app där barn lär sig ord och ljud — djur, mat, kläder, färger." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="icons/icon-512.png" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+  <header id="top-bar">
+    <button id="back-btn" class="icon-btn" aria-label="Tillbaka" hidden>⬅️</button>
+    <h1 id="screen-title">Lär dig!</h1>
+    <button id="settings-btn" class="icon-btn" aria-label="Inställningar">⚙️</button>
+    <button id="home-btn" class="icon-btn" aria-label="Hem" hidden>🏠</button>
+  </header>
+
+  <main id="app"></main>
+
+  <div id="settings-modal" class="modal" hidden>
+    <div class="modal-card">
+      <h2 id="settings-title">Inställningar</h2>
+
+      <label class="settings-row">
+        <span class="settings-label" id="lang-label">Språk</span>
+        <div class="lang-toggle" role="radiogroup">
+          <button class="lang-btn" data-lang="sv">🇸🇪 Svenska</button>
+          <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        </div>
+      </label>
+
+      <label class="settings-row">
+        <span class="settings-label" id="voice-label">Röst</span>
+        <select id="voice-select" class="settings-select"></select>
+        <button id="voice-test" class="test-btn" aria-label="Testa röst">🔊</button>
+      </label>
+
+      <button id="settings-close" class="primary-btn">Klar</button>
+
+      <button id="about-toggle" class="link-btn">ℹ️ Om appen</button>
+
+      <div id="about-section" hidden>
+        <h3 id="about-heading">Om appen</h3>
+        <p id="about-intro">Lär dig! är en gratis och öppen barn-app gjord av Linnea Hedlund.</p>
+        <p id="about-license">Källkod under MIT-licens. Alla ljud är Public Domain (CC0).</p>
+        <details>
+          <summary id="about-credits-heading">Krediter för ljud</summary>
+          <ul id="about-credits-list"></ul>
+        </details>
+        <p class="about-repo">
+          <a id="about-repo-link" href="#" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <template id="tpl-age">
+    <section class="screen age-screen">
+      <h2 class="big-heading" data-i18n="chooseAge">Hur gammal är du?</h2>
+      <div class="age-grid">
+        <button class="age-card" data-age="1-2">
+          <span class="age-emoji">👶</span>
+          <span class="age-label" data-i18n="age12">1–2 år</span>
+          <span class="age-sub" data-i18n="age12sub">Tryck och lyssna</span>
+        </button>
+        <button class="age-card" data-age="3-4">
+          <span class="age-emoji">🧒</span>
+          <span class="age-label" data-i18n="age34">3–4 år</span>
+          <span class="age-sub" data-i18n="age34sub">Lär dig ord</span>
+        </button>
+        <button class="age-card" data-age="5-6">
+          <span class="age-emoji">👦</span>
+          <span class="age-label" data-i18n="age56">5–6 år</span>
+          <span class="age-sub" data-i18n="age56sub">Quiz och läsning</span>
+        </button>
+      </div>
+    </section>
+  </template>
+
+  <template id="tpl-categories">
+    <section class="screen categories-screen">
+      <h2 class="big-heading" data-i18n="chooseCategory">Välj en kategori</h2>
+      <div class="category-grid" id="category-grid"></div>
+    </section>
+  </template>
+
+  <template id="tpl-items">
+    <section class="screen items-screen">
+      <div class="items-grid" id="items-grid"></div>
+    </section>
+  </template>
+
+  <template id="tpl-quiz">
+    <section class="screen quiz-screen">
+      <h2 class="big-heading" id="quiz-question">Hitta...</h2>
+      <div class="quiz-grid" id="quiz-grid"></div>
+      <div id="quiz-feedback" class="quiz-feedback"></div>
+    </section>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
