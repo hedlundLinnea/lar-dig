@@ -1,0 +1,19 @@
+{
+  "name": "barnens-ordbok",
+  "version": "1.0.0",
+  "description": "Interaktiv barn-app pa svenska och engelska",
+  "private": true,
+  "scripts": {
+    "start": "python -m http.server 8765 --directory www",
+    "sync": "cap sync",
+    "open:android": "cap open android",
+    "open:ios": "cap open ios"
+  },
+  "author": "Linnea Hedlund",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4"
+  }
+}

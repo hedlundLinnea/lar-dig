@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Barnens ordbok</string>
+    <string name="title_activity_main">Barnens ordbok</string>
+    <string name="package_name">se.barnensordbok.app</string>
+    <string name="custom_url_scheme">se.barnensordbok.app</string>
+</resources>
