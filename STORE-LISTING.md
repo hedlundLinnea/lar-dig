@@ -22,12 +22,19 @@ Barnens ordbok är en gratis, reklamfri app där barn lär sig sina första ord 
 • 3–4 år: Bilder med en växla-knapp så barnet kan se hur ordet stavas.
 • 5–6 år: Quiz-läge! "Hitta lejonet" — barnet lär sig läsa.
 
-📚 6 KATEGORIER, ÖVER 60 ORD
+📚 13 KATEGORIER, ÖVER 150 ORD
 • Djur (lejon, hund, katt, ko, gris, häst, får, elefant, björn …)
 • Mat (äpple, banan, mjölk, pizza, ost …)
 • Kläder (tröja, byxor, skor, vantar, mössa …)
 • Färger (röd, gul, grön, blå …)
-• Fordon (bil, buss, tåg, flygplan …)
+• Fordon (bil, buss, tåg, flygplan, raket …)
+• Kroppen (öga, näsa, hand, fot …)
+• Känslor (glad, ledsen, arg, trött …)
+• Natur & väder (sol, regn, snö, blomma …)
+• Havet (fisk, val, delfin, krabba …)
+• Småkryp (fjäril, bi, nyckelpiga …)
+• Hemma (säng, stol, dörr, lampa …)
+• Leksaker (boll, nalle, ballong, pussel …)
 • Siffror 1–10
 
 🔊 RIKTIGA DJURLJUD
@@ -60,12 +67,19 @@ Children's Dictionary is a free, ad-free app where kids learn their first words 
 • Ages 3–4: Pictures with a toggle button so kids can see how the word is spelled.
 • Ages 5–6: Quiz mode! "Find the lion" — kids learn to read.
 
-📚 6 CATEGORIES, OVER 60 WORDS
+📚 13 CATEGORIES, OVER 150 WORDS
 • Animals (lion, dog, cat, cow, pig, horse, sheep, elephant, bear …)
 • Food (apple, banana, milk, pizza, cheese …)
 • Clothes (shirt, pants, shoes, mittens, cap …)
 • Colors (red, yellow, green, blue …)
-• Vehicles (car, bus, train, airplane …)
+• Vehicles (car, bus, train, airplane, rocket …)
+• Body (eye, nose, hand, foot …)
+• Feelings (happy, sad, angry, tired …)
+• Nature & weather (sun, rain, snow, flower …)
+• The sea (fish, whale, dolphin, crab …)
+• Bugs (butterfly, bee, ladybug …)
+• At home (bed, chair, door, lamp …)
+• Toys (ball, teddy bear, balloon, puzzle …)
 • Numbers 1–10
 
 🔊 REAL ANIMAL SOUNDS

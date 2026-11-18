@@ -12,7 +12,7 @@ En gratis interaktiv app för barn att lära sig svenska och engelska ord. Stora
   - 1–2 år: Bara stora bilder, tryck = ljud + uttal
   - 3–4 år: Bilder + en "Aa"-knapp för att se ordet
   - 5–6 år: Quiz-läge "Hitta lejonet!"
-- **6 kategorier:** Djur, Mat, Kläder, Färger, Fordon, Siffror — 60+ ord totalt
+- **13 kategorier:** Djur, Mat, Kläder, Färger, Fordon, Kroppen, Känslor, Natur & väder, Havet, Småkryp, Hemma, Leksaker, Siffror — 150+ ord totalt
 - **PWA:** Installera som app på telefon/surfplatta utan App Store
 
 ## Kör lokalt

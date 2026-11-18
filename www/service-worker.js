@@ -1,5 +1,5 @@
 // Höj versionen när filer ändras, så att alla får den nya cachen.
-const CACHE = "barn-app-v6";
+const CACHE = "barn-app-v7";
 const ASSETS = [
   "./",
   "./index.html",
