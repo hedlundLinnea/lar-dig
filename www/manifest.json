@@ -1,6 +1,6 @@
 {
-  "name": "Lär dig!",
-  "short_name": "Lär dig",
+  "name": "Barnens ordbok",
+  "short_name": "Barnens ordbok",
   "description": "Interaktiv app för barn att lära sig ord på svenska",
   "start_url": "./index.html",
   "display": "standalone",

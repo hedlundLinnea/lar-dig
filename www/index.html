@@ -2,61 +2,68 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#FFD166" />
+  <meta name="color-scheme" content="light" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>Lär dig! — Interaktiv barn-app</title>
+  <meta name="apple-mobile-web-app-title" content="Barnens ordbok" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Barnens ordbok — lär dig ord på svenska och engelska</title>
   <meta name="description" content="Lär dig svenska och engelska ord med djurljud, mat, kläder och färger. För barn 1–6 år." />
-  <meta property="og:title" content="Lär dig!" />
+  <meta property="og:title" content="Barnens ordbok" />
   <meta property="og:description" content="Interaktiv app där barn lär sig ord och ljud — djur, mat, kläder, färger." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="icons/icon-512.png" />
   <meta name="twitter:card" content="summary" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" />
+  <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="icons/icon-192.png" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 </head>
 <body>
   <header id="top-bar">
-    <button id="back-btn" class="icon-btn" aria-label="Tillbaka" hidden>⬅️</button>
-    <h1 id="screen-title">Lär dig!</h1>
-    <button id="settings-btn" class="icon-btn" aria-label="Inställningar">⚙️</button>
-    <button id="home-btn" class="icon-btn" aria-label="Hem" hidden>🏠</button>
+    <div class="bar-slot bar-left">
+      <button id="back-btn" class="icon-btn" type="button" aria-label="Tillbaka" hidden>⬅️</button>
+    </div>
+    <h1 id="screen-title">Barnens ordbok</h1>
+    <div class="bar-slot bar-right">
+      <button id="settings-btn" class="icon-btn" type="button" aria-label="Inställningar">⚙️</button>
+      <button id="home-btn" class="icon-btn" type="button" aria-label="Hem" hidden>🏠</button>
+    </div>
   </header>
 
   <main id="app"></main>
 
   <div id="settings-modal" class="modal" hidden>
-    <div class="modal-card">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="settings-title">
       <h2 id="settings-title">Inställningar</h2>
 
-      <label class="settings-row">
+      <div class="settings-row">
         <span class="settings-label" id="lang-label">Språk</span>
-        <div class="lang-toggle" role="radiogroup">
-          <button class="lang-btn" data-lang="sv">🇸🇪 Svenska</button>
-          <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+        <div class="lang-toggle" role="radiogroup" aria-labelledby="lang-label">
+          <button class="lang-btn" type="button" role="radio" data-lang="sv">🇸🇪 Svenska</button>
+          <button class="lang-btn" type="button" role="radio" data-lang="en">🇬🇧 English</button>
         </div>
-      </label>
+      </div>
 
-      <label class="settings-row">
-        <span class="settings-label" id="voice-label">Röst</span>
+      <div class="settings-row voice-row">
+        <label class="settings-label" id="voice-label" for="voice-select">Röst</label>
         <select id="voice-select" class="settings-select"></select>
-        <button id="voice-test" class="test-btn" aria-label="Testa röst">🔊</button>
-      </label>
+        <button id="voice-test" class="test-btn" type="button" aria-label="Testa röst">🔊</button>
+      </div>
 
-      <button id="settings-close" class="primary-btn">Klar</button>
+      <button id="settings-close" class="primary-btn" type="button">Klar</button>
 
-      <button id="about-toggle" class="link-btn">ℹ️ Om appen</button>
+      <button id="about-toggle" class="link-btn" type="button" aria-expanded="false" aria-controls="about-section">ℹ️ Om appen</button>
 
       <div id="about-section" hidden>
         <h3 id="about-heading">Om appen</h3>
-        <p id="about-intro">Lär dig! är en gratis och öppen barn-app gjord av Linnea Hedlund.</p>
+        <p id="about-intro">Barnens ordbok är en gratis och öppen barn-app gjord av Linnea Hedlund.</p>
         <p id="about-license">Källkod under MIT-licens. Alla ljud är Public Domain (CC0).</p>
+        <p id="about-font">Typsnitt: Fredoka © The Fredoka Project Authors, SIL Open Font License 1.1.</p>
         <details>
           <summary id="about-credits-heading">Krediter för ljud</summary>
           <ul id="about-credits-list"></ul>
@@ -72,17 +79,17 @@
     <section class="screen age-screen">
       <h2 class="big-heading" data-i18n="chooseAge">Hur gammal är du?</h2>
       <div class="age-grid">
-        <button class="age-card" data-age="1-2">
+        <button class="age-card" type="button" data-age="1-2">
           <span class="age-emoji">👶</span>
           <span class="age-label" data-i18n="age12">1–2 år</span>
           <span class="age-sub" data-i18n="age12sub">Tryck och lyssna</span>
         </button>
-        <button class="age-card" data-age="3-4">
+        <button class="age-card" type="button" data-age="3-4">
           <span class="age-emoji">🧒</span>
           <span class="age-label" data-i18n="age34">3–4 år</span>
           <span class="age-sub" data-i18n="age34sub">Lär dig ord</span>
         </button>
-        <button class="age-card" data-age="5-6">
+        <button class="age-card" type="button" data-age="5-6">
           <span class="age-emoji">👦</span>
           <span class="age-label" data-i18n="age56">5–6 år</span>
           <span class="age-sub" data-i18n="age56sub">Quiz och läsning</span>
@@ -107,9 +114,12 @@
   <template id="tpl-quiz">
     <section class="screen quiz-screen">
       <div class="quiz-streak" id="quiz-streak" aria-live="polite"></div>
-      <h2 class="big-heading" id="quiz-question">Hitta...</h2>
+      <div class="quiz-question-row">
+        <h2 class="big-heading" id="quiz-question">Hitta...</h2>
+        <button class="replay-btn" id="quiz-replay" type="button" aria-label="Lyssna igen">🔊</button>
+      </div>
       <div class="quiz-grid" id="quiz-grid"></div>
-      <div id="quiz-feedback" class="quiz-feedback"></div>
+      <div id="quiz-feedback" class="quiz-feedback" aria-live="polite"></div>
     </section>
   </template>
 

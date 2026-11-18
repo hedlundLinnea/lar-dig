@@ -1,7 +1,7 @@
 // UI-texter på två språk
 const UI = {
   sv: {
-    title:          "Lär dig!",
+    title:          "Barnens ordbok",
     chooseAge:      "Hur gammal är du?",
     chooseCategory: "Välj en kategori",
     categories:     "Kategorier",
@@ -16,7 +16,7 @@ const UI = {
     save:           "Klar",
     about:          "ℹ️ Om appen",
     aboutHeading:   "Om appen",
-    aboutIntro:     "Lär dig! är en gratis och öppen barn-app gjord av Linnea Hedlund.",
+    aboutIntro:     "Barnens ordbok är en gratis och öppen barn-app gjord av Linnea Hedlund.",
     aboutLicense:   "Källkod under MIT-licens. Alla ljud är Public Domain (CC0).",
     aboutCredits:   "Krediter för ljud",
     showWord:       "Visa ordet",
@@ -28,7 +28,7 @@ const UI = {
     age56sub:       "Quiz och läsning"
   },
   en: {
-    title:          "Learn!",
+    title:          "Children's Dictionary",
     chooseAge:      "How old are you?",
     chooseCategory: "Choose a category",
     categories:     "Categories",
@@ -43,7 +43,7 @@ const UI = {
     save:           "Done",
     about:          "ℹ️ About",
     aboutHeading:   "About",
-    aboutIntro:     "Learn! is a free and open-source children's app made by Linnea Hedlund.",
+    aboutIntro:     "Children's Dictionary is a free and open-source children's app made by Linnea Hedlund.",
     aboutLicense:   "Code under MIT license. All sounds are Public Domain (CC0).",
     aboutCredits:   "Sound credits",
     showWord:       "Show word",
