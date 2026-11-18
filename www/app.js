@@ -337,11 +337,42 @@ function renderItems() {
 }
 
 // ===== Quiz (5-6 år) =====
+let quizStreak = 0;
+
+function updateStreakDisplay() {
+  const el = document.getElementById("quiz-streak");
+  if (!el) return;
+  el.textContent = quizStreak > 0 ? "⭐".repeat(Math.min(quizStreak, 10)) : "";
+}
+
+function fireConfetti() {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let layer = document.getElementById("confetti-layer");
+  if (!layer) {
+    layer = document.createElement("div");
+    layer.id = "confetti-layer";
+    document.body.appendChild(layer);
+  }
+  const pieces = ["🎉", "⭐", "✨", "🎈", "🌟", "🎊"];
+  for (let i = 0; i < 16; i++) {
+    const span = document.createElement("span");
+    span.className = "confetti-piece";
+    span.textContent = pieces[i % pieces.length];
+    span.style.left = (5 + Math.floor((i / 16) * 90) + (i % 3) * 3) + "%";
+    span.style.animationDelay = (i % 5) * 0.08 + "s";
+    span.style.fontSize = 22 + (i % 4) * 6 + "px";
+    layer.appendChild(span);
+    span.addEventListener("animationend", () => span.remove());
+  }
+}
+
 function renderQuiz() {
   const catLabel = state.category.label[settings.lang] || state.category.label.sv;
   screenTitle.textContent = catLabel + " — " + t("quizSuffix");
   const tpl = document.getElementById("tpl-quiz").content.cloneNode(true);
   app.appendChild(tpl);
+  quizStreak = 0;
+  updateStreakDisplay();
   startQuizRound();
 }
 
@@ -378,11 +409,16 @@ function handleQuizAnswer(card, picked, correct) {
   if (wordOf(picked) === wordOf(correct)) {
     card.classList.add("correct");
     feedback.textContent = t("correct");
+    quizStreak++;
+    updateStreakDisplay();
+    fireConfetti();
     playSound(picked.sound, wordOf(picked));
     setTimeout(startQuizRound, 1800);
   } else {
     card.classList.add("wrong");
     feedback.textContent = t("tryAgain");
+    quizStreak = 0;
+    updateStreakDisplay();
     setTimeout(() => card.classList.remove("wrong"), 600);
   }
 }
